@@ -15,7 +15,7 @@ node ('master')
   
   stage("CheckOutCodeGit")
   {
-   git branch: 'master', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+   git branch: 'development', credentialsId: 'a21af540-7457-4cf0-aff7-cee0b191fde9', url: 'https://github.com/vijaytechnologies-ec-applications/flipkart2.git'
  }
  
  stage("Build")
@@ -28,7 +28,7 @@ node ('master')
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
  }
- 
+ */
  stage("UploadArtifactsintoNexus")
  {
  sh "${mavenHome}/bin/mvn deploy"
@@ -36,11 +36,11 @@ node ('master')
  
   stage("DeployAppTomcat")
  {
-  sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
+  sshagent(['0f0be29e-3f99-44d8-8d89-7d39a9ac8781']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@18.188.104.53://opt/apache-tomcat-9.0.52/webapps/" 
   }
  }
- 
+ /*
  stage('EmailNotification')
  {
  mail bcc: 'devopstrainingblr@gmail.com', body: '''Build is over
