@@ -30,7 +30,11 @@
 	</properties>
 
 	<dependencies>
-		
+		<dependency>
+		    <groupId>org.sonarsource.sonarqube</groupId>
+  		    <artifactId>sonar-plugin-api-impl</artifactId>
+		    <version>9.1.0.47736</version>
+		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
