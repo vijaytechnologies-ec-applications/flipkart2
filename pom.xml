@@ -122,6 +122,12 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+                            <groupId>org.sonarsource.scanner.maven</groupId>
+ 			    <artifactId>sonar-maven-plugin</artifactId>
+			    <version>${sonar.version}</version>
+			</plugin>
 
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
